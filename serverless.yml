@@ -1,0 +1,18 @@
+service: prueba-banco
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  profile: marlon-aws
+  region: us-east-1
+
+functions:
+  problema:
+    handler: handler.problema
+    events:
+      - http:
+          method: post
+          path: /problemaBanco
